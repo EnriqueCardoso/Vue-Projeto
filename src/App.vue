@@ -11,8 +11,8 @@ else{
   contador.value--
 }
 }
-const nome = 'Enrique'
-    const idade = 16
+const nome = prompt("Informe seu nome:")
+    const idade = Number(prompt("Informe sua idade:"))
 
     function inverter(texto) {
         return texto.split('').reverse().join('')
@@ -27,6 +27,8 @@ function resetar(){
 }
 
 </script>
+
+
 
 <template>
     
@@ -44,19 +46,23 @@ function resetar(){
   </div>
 
 <div class="cont">
+  <h1>Contador</h1>
  <button @click="contador++">+</button>
  <button @click="decrementar">-</button>
  <button @click="resetar">Resetar</button>
  <p> Valor do contador: {{ contador }}</p>
+ <div v-if="contador > 10" style="color: green;background-color: white;text-align: center;">O número é maior que 10</div>
+ <div v-else style="color: red;background-color: rgb(255, 255, 255);text-align: center;">O número é menor que 10 </div>
 </div>
 </template>
+
 
 
 <style scoped>
 
 button{
   font-weight: bold;
-  margin-left: 5%;
+  margin-left: 6%;
   background-color: rgb(43, 226, 134);
   color: rgb(27, 27, 27);
   width: 25%;
@@ -64,8 +70,13 @@ button{
   align-items: center;
 }
 
-.cont p{
+.cont p,h1{
   text-align: center;
+}
+
+.cont h1{
+  margin-top: -20px;
+  margin-bottom: 20px;
 }
 
 
